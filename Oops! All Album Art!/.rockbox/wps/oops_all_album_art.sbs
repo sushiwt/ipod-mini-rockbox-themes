@@ -1,0 +1,78 @@
+# Oops! All Cover! Status Bar
+# (C) made by sushiwt, 2025
+
+# UI Viewport
+%Vi(-,7,41,124,64,-)%Vf(0)%Vb(3)
+
+# Load Bitmaps for the Top Box
+%xl(D,access_disk.bmp,0,0)
+%xl(M,battery.bmp,0,0,10)
+%xl(N,volume.bmp,0,0,10)
+%xl(A,lock.bmp,0,0)
+
+# Album Art Background
+%ax%V(0,0,138,110,-)
+%Cl(0,0,138,138,c,c)
+%Cd
+
+# UI Viewport Rounded Box
+%V(6,38,126,67,-)
+%V(5,39,128,65,-)
+
+##################################################################
+
+# Round Corners
+# Top Left
+%V(0,0,1,4,-)
+%V(0,0,4,1,-)
+%V(0,0,2,2,-)
+
+# Top Right
+%V(134,0,4,1,-)
+%V(137,0,1,4,-)
+%V(136,0,2,2,-)
+
+# Bottom Left
+%V(0,106,1,4,-)
+%V(0,109,4,1,-)
+%V(0,108,2,2,-)
+
+# Bottom Right
+%V(137,106,1,4,-)
+%V(134,109,4,1,-)
+%V(136,108,2,2,-)
+
+# Track Info Box
+%V(6,5,126,28,-)
+%V(5,6,128,26,-)
+
+# Track Info 
+%ax%V(8,7,80,24,-)
+%t(5)%s%al%?if(%mp, =, 1)<Not Playing|%?it<%it|%fn>>;%t(5)%s%al%?ia<%ia|%?d(2)<%d(2)|%Sx(Unknown)>>
+%s%al%Lt
+
+# Playlist Position
+%V(88,7,42,16,-)
+%s%ar%?Sr<%pe %Sx(of) %pp|%pp %Sx(of) %pe>
+
+# Battery
+%V(112,21,17,9,-)
+%?bp<%?bc<%xd(Ma)|%xd(Mb)>|%?bl<|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)>>
+
+# Volume
+%V(90,20,16,11,-)
+%?pv<%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)>
+
+# Hold
+%V(-22,41,14,9,-)
+%?mh<%xd(A)|>
+
+##################################################################
+
+# disk access icon
+%V(-65,22,12,8,0)%Vf(0)%Vb(3)
+%?lh<%xd(D)|>
+
+# Clock on RTC able targets, and disk access
+# %V(-43,0,31,8,0)%Vf(0)%Vb(3) # align on the right with room for 5 SYSFONT digits
+# %?cc<%?ca<%?St(time format)<%cH|%cI>:%cM|--:-->|>

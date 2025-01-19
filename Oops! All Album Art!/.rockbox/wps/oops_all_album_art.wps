@@ -1,0 +1,108 @@
+# Oops! All Album Art!
+# (C) made by sushiwt, 2025
+
+# Disable Status Bar
+%wd
+
+# Define Additional Fonts
+%Fl(2,21-Adobe-Helvetica.fnt,28)
+
+# Album Art Conditional
+%?C<%C%Vd(a)|%Vd(b)>
+
+# Album Art Background
+%ax%Vl(a,0,0,138,110,-)
+%Cl(0,0,138,138,c,c)
+%Cd
+
+# Backdrop when Album Art isn't rendered
+%X(oaaa_wps.bmp)
+
+# Title when Album Art isn't rendered
+%ax%Vl(b,0,50,138,40,2)
+%Vf(1)
+%s%ac%?it<  %it  |  %fn  >
+
+##################################################################
+
+# Round Corners
+# Top Left
+%V(0,0,1,4,-)
+%V(0,0,4,1,-)
+%V(0,0,2,2,-)
+
+# Top Right
+%V(134,0,4,1,-)
+%V(137,0,1,4,-)
+%V(136,0,2,2,-)
+
+# Bottom Left
+%V(0,106,1,4,-)
+%V(0,109,4,1,-)
+%V(0,108,2,2,-)
+
+# Bottom Right
+%V(137,106,1,4,-)
+%V(134,109,4,1,-)
+%V(136,108,2,2,-)
+
+# Load Bitmaps for the Top Box
+%xl(M,battery.bmp,0,0,10)
+%xl(N,volume.bmp,0,0,10)
+
+# Track Info Box
+%V(6,5,126,28,-)
+%V(5,6,128,26,-)
+
+# Track Info 
+%ax%V(8,7,80,24,-)
+%s%al%?it<%it|%fn>
+%s%al%?ia<%ia|%?d(2)<%d(2)|%Sx(Unknown)>>
+
+# Playlist Position
+%V(88,7,42,16,-)
+%s%ar%?Sr<%pe %Sx(of) %pp|%pp %Sx(of) %pe>
+
+# Battery
+%V(112,21,17,9,-)
+%?bp<%?bc<%xd(Ma)|%xd(Mb)>|%?bl<|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)>>
+
+# Volume
+%V(90,20,16,11,-)
+%?pv<%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)>
+ 
+##################################################################
+# Preload Images
+%xl(F,playmode.bmp,0,0,5)
+%xl(A,lock.bmp,0,0)
+%xl(D,shuffle.bmp,0,0)
+%xl(E,repeat.bmp,0,0,4)
+
+# Time Elapsed/Remaining Box
+%V(6,85,126,20,-)
+%V(5,86,128,18,-)
+
+# Progress Bar
+%V(6,99,126,5,-)
+%pb(0,0,126,5,pb.bmp)
+
+# Time Elapsed/Remaining
+%V(9,86,121,13,-)
+%al%pc%ar%pr
+
+# Playmode
+%V(63,88,11,11,-)
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+
+# Shuffle
+%V(42,88,8,8,1)
+%?ps<%xd(D)>
+
+# Repeat
+%V(86,85,16,13,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)>
+
+# Hold
+%V(61,87,14,9,-)
+%?mh<%xd(A)|>
+
