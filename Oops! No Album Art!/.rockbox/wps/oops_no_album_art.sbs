@@ -1,0 +1,41 @@
+# Oops! No Album Art! Status Bar
+# (C) made by sushiwt, 2025
+
+# UI Viewport
+%Vi(-,7,30,124,72,-)%Vf(0)%Vb(3)
+
+# Load Bitmaps for the Top Box
+%xl(D,access_disk.bmp,0,0)
+%xl(M,battery.bmp,0,0,10)
+%xl(N,volume.bmp,0,0,10)
+%xl(A,lock.bmp,0,0)
+
+# Backdrop
+%X(onaa_sbs.bmp)
+##################################################################
+
+# List Title
+%V(0,8,138,16,-)
+%s%ac%?Lt<%Lt|iPod mini>
+#
+# Battery
+%V(112,9,17,9,-)
+%?bp<%?bc<%xd(Ma)|%xd(Mb)>|%?bl<|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)>>
+
+# Volume
+%V(10,8,16,10,-)
+%?pv<%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)>
+ 
+# Hold
+%V(-22,30,14,9,-)
+%?mh<%xd(A)|>
+
+##################################################################
+
+# disk access icon
+%V(-38,10,12,8,0)%Vf(0)%Vb(3)
+%?lh<%xd(D)|>
+
+# Clock on RTC able targets, and disk access
+# %V(-43,0,31,8,0)%Vf(0)%Vb(3) # align on the right with room for 5 SYSFONT digits
+# %?cc<%?ca<%?St(time format)<%cH|%cI>:%cM|--:-->|>

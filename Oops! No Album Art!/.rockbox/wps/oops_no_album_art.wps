@@ -1,0 +1,72 @@
+# Oops! No Album Art!
+# (C) made by sushiwt, 2025
+
+# Disable Status Bar
+%wd
+
+# Define Additional Fonts
+%Fl(2,21-Adobe-Helvetica.fnt,28)
+%Fl(3,15-Adobe-Helvetica.fnt,28)
+
+# Backdrop
+%X(onaa_wps.bmp)
+
+##################################################################
+
+# Load Bitmaps for the Top Box
+%xl(M,battery.bmp,0,0,10)
+%xl(N,volume.bmp,0,0,10)
+
+# Playlist Position
+%V(0,8,138,16,-)
+%s%ac%?Sr<%pe %Sx(of) %pp|%pp %Sx(of) %pe>
+#
+# Battery
+%V(112,9,17,9,-)
+%?bp<%?bc<%xd(Ma)|%xd(Mb)>|%?bl<|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)>>
+
+# Volume
+%V(10,8,16,10,-)
+%?pv<%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)>
+ 
+# Track Title
+%ax%V(0,34,138,40,2)
+%Vf(3)
+%s%ac%?it<  %it  |  %fn  >
+
+# Track Artist
+%ax%V(0,58,138,40,3)
+%Vf(3)
+%s%ac%?ia<  %ia  |  %fn  >
+
+##################################################################
+# Preload Images
+%xl(F,playmode.bmp,0,0,5)
+%xl(A,lock.bmp,0,0)
+%xl(D,shuffle.bmp,0,0)
+%xl(E,repeat.bmp,0,0,4)
+
+# Progress Bar
+%V(6,99,126,5,-)
+%pb(0,0,126,5,pb.bmp)
+
+# Time Elapsed/Remaining
+%V(9,86,121,13,-)
+%al%pc%ar%pr
+
+# Playmode
+%V(63,88,11,11,-)
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+
+# Shuffle
+%V(42,88,8,8,1)
+%?ps<%xd(D)>
+
+# Repeat
+%V(86,85,16,13,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)>
+
+# Hold
+%V(61,87,14,9,-)
+%?mh<%xd(A)|>
+
