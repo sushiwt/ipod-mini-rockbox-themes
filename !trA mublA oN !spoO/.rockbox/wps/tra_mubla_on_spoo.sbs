@@ -1,0 +1,45 @@
+# !trA mublA oN !spoO Status Bar
+# (C) made by sushiwt, 2025
+
+# UI Viewport
+%Vi(-,4,30,130,72,-)%Vf(0)%Vb(3)
+
+# Load Bitmaps for the Top Box
+%xl(F,playmode.bmp,0,0,5)
+%xl(D,access_disk.bmp,0,0)
+%xl(M,battery.bmp,0,0,10)
+%xl(A,lock.bmp,0,0)
+
+# Backdrop
+%X(aano_sbs.bmp)
+
+# Viewport Display Conditionals
+%?mh<%Vd(locked)|%Vd(unlocked)>
+
+##################################################################
+
+# List Title
+%V(36,7,64,16,-)%Vf(3)
+%s%ac%?Lt<%Lt|iPod mini>
+
+# Battery
+%V(114,8,17,9,-)
+%?bp<%?bc<%xd(Ma)|%xd(Mb)>|%?bl<|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)>>
+
+# Playmode
+%Vl(unlocked,10,8,11,11,-)
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+
+# Locked
+%Vl(locked,8,8,14,9,-)
+%?mh<%xd(A)|>
+
+##################################################################
+
+# disk access icon
+%V(-38,10,12,8,0)%Vf(0)%Vb(3)
+%?lh<%xd(D)|>
+
+# Clock on RTC able targets, and disk access
+# %V(-43,0,31,8,0)%Vf(0)%Vb(3) # align on the right with room for 5 SYSFONT digits
+# %?cc<%?ca<%?St(time format)<%cH|%cI>:%cM|--:-->|>

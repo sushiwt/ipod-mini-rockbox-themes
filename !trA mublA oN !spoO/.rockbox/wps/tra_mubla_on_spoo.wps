@@ -1,0 +1,78 @@
+# !trA mublA oN !spoO
+# (C) made by sushiwt, 2025
+
+# Disable Status Bar
+%wd
+
+# Define Additional Fonts
+%Fl(2,21-Adobe-Helvetica.fnt,28)
+%Fl(3,15-Adobe-Helvetica.fnt,28)
+
+# Preload Images
+%xl(F,playmode.bmp,0,0,5)
+%xl(A,lock.bmp,0,0)
+%xl(D,shuffle.bmp,0,0)
+%xl(E,repeat.bmp,0,0,4)
+%xl(M,battery.bmp,0,0,10)
+
+# Backdrop
+%X(aano_wps.bmp)
+
+# Viewport Display Conditionals
+%?mh<%Vd(locked)|%Vd(unlocked)>
+%?mv<%Vd(volume)|%Vd(trackpos)>
+
+##################################################################
+
+
+# Playlist Position
+%V(0,7,138,16,-)%Vf(3)
+%s%ac%?Sr<%pe %Sx(of) %pp|%pp %Sx(of) %pe>
+#
+# Battery
+%V(114,8,17,9,-)
+%?bp<%?bc<%xd(Ma)|%xd(Mb)>|%?bl<|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)>>
+
+# Playmode
+%Vl(unlocked,10,8,11,11,-)
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+
+# Locked
+%Vl(locked,8,8,14,9,-)
+%?mh<%xd(A)|>
+
+# Track Title
+%ax%V(0,34,138,40,2)
+%s%ac%?it<  %it  |  %fn  >
+
+# Track Artist
+%ax%V(0,58,138,40,3)
+%s%ac%?ia<  %ia  |  %fn  >
+
+##################################################################
+
+# Progress Bar
+%Vl(trackpos,2,101,134,5,-)
+%pb(0,0,134,5,pb.bmp)
+
+# Volume (Replacing Progress Bar)
+%Vl(volume,2,101,134,5,-)
+%pv(0,0,134,5,pb.bmp)
+
+# Time Elapsed/Remaining
+%Vl(trackpos,7,86,125,13,-)%Vf(3)
+%al%pc%ar%pr
+
+# Volume (Replacing Time Elapsed/Remaining)
+%Vl(volume,7,86,125,13,-)%Vf(3)
+%alVol.%ar%pv
+
+# Shuffle
+%V(48,88,8,8,1)
+%?ps<%xd(D)>
+
+# Repeat
+%V(80,85,16,13,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)>
+
+
